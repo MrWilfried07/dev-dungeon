@@ -39,7 +39,7 @@ public class TorchComponent implements Component {
   }
 
   /**
-   * Checks if the torch is lit.
+   * Checks if the torch is lit.      :)
    *
    * @return True if the torch is lit, false otherwise.
    */
@@ -57,7 +57,7 @@ public class TorchComponent implements Component {
   }
 
   /**
-   * Gets the value of the torch.
+   * Gets the value of the torch.     :)
    *
    * @return The value of the torch.
    */

@@ -1,6 +1,7 @@
 package item.effects;
 
 import core.Entity;
+import core.components.VelocityComponent;
 import systems.EventScheduler;
 
 /**
@@ -36,6 +37,27 @@ public class SpeedEffect {
    * @param target The entity to which the speed effect will be applied.
    */
   public void applySpeedEffect(Entity target) {
-    throw new UnsupportedOperationException("Method not implemented.");
+//    throw new UnsupportedOperationException("Method not implemented.");
+
+      //  Holt die VelocityComponent (oder wirf Exception)
+      VelocityComponent vc = target.fetch(VelocityComponent.class)
+          .orElseThrow(() ->
+              new IllegalStateException("SpeedEffect benötigt eine VelocityComponent"));
+
+      vc.xVelocity(vc.xVelocity() + speedIncrease);
+      vc.yVelocity(vc.yVelocity() + speedIncrease);
+
+      vc.currentXVelocity(vc.xVelocity());
+      vc.currentYVelocity(vc.yVelocity());
+
+
+      EVENT_SCHEDULER.scheduleAction(() -> {
+          // Max-Geschwindigkeit zurückschalten
+          vc.xVelocity(vc.xVelocity() + speedIncrease);
+          vc.yVelocity(vc.yVelocity() + speedIncrease);
+          // Current-Geschwindigkeit anpassen, falls sie über dem neuen Max liegt
+          vc.currentXVelocity(Math.min(vc.currentXVelocity(), vc.xVelocity()));
+          vc.currentYVelocity(Math.min(vc.currentYVelocity(), vc.yVelocity()));
+      }, duration * 100000L);
   }
 }

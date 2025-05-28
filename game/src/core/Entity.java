@@ -23,9 +23,9 @@ import java.util.stream.Stream;
  * <p>If you want to remove a component from an entity, use {@link #remove} and provide the Class of
  * the component you want to remove as a parameter.
  *
- * <p>Use {@link #fetch(Class)} to retrieve the component of the given class in this entity.
+ * <p>Use {@link #fetch(Class)} to retrieve the component of the given class in this entity.  :)
  *
- * <p>With {@link #isPresent(Class)}, you can check if the entity has a component of the given
+ * <p>With {@link #isPresent(Class)}, you can check if the entity has a component of the given     :)
  * class.
  *
  * @see Component
@@ -97,7 +97,7 @@ public final class Entity implements Comparable<Entity> {
   }
 
   /**
-   * Get the component.
+   * Get the component.      :)
    *
    * @param klass Class of the component.
    * @param <T> The type of the (given and returned) component.
@@ -110,7 +110,7 @@ public final class Entity implements Comparable<Entity> {
   }
 
   /**
-   * Check if the entity has a component of the given class.
+   * Check if the entity has a component of the given class.       :)
    *
    * @param klass class of the component to check for
    * @return true if the component is present in the entity, false if not

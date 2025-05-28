@@ -281,7 +281,7 @@ public final class Game {
   }
 
   /**
-   * Use this stream if you want to iterate over all currently active entities.
+   * Use this stream if you want to iterate over all currently active entities.       :)
    *
    * @return a stream of all entities currently in the game
    */
